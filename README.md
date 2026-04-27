@@ -1,6 +1,6 @@
 # 🧾 PDF Payslip Hours Extractor
 
-A Streamlit web application that automatically extracts and calculates working hours from PDF payslips or manual input.
+A Streamlit web application that intelligently extracts and calculates working hours from multiple PDF payslip formats or manual input.
 
 ---
 
@@ -12,16 +12,15 @@ A Streamlit web application that automatically extracts and calculates working h
 
 ## 🚀 Features
 
-* 📄 Upload PDF payslips
-* 🔍 Automatic extraction of working hours:
-
-  * Ordinary
-  * Time and 1/2
-  * Double Time
-* ✍️ Manual input for flexible usage
-* ⏱️ Calculate total working hours
-* 📅 Estimate total working days
-* 📊 Handle multiple payslips
+- 📄 Upload PDF payslips
+- 🔍 Automatic extraction of working hours:
+  - Chandler Agency
+  - TFI (Thomas Foods International)
+  - APG Workforce
+- ✍️ Manual input for flexible usage
+- ⏱️ Calculate total working hours
+- 📅 Estimate total working days
+- 📊 Handle multiple payslips
 
 ---
 
@@ -40,18 +39,19 @@ This approach ensures flexibility, allowing users to still calculate working hou
 
 ### 1. PDF Upload Mode
 
-* Extracts text from uploaded payslip
-* Detects working hours using pattern matching (regex)
-* Calculates total hours and days automatically
+* Upload one or multiple payslips
+* System extracts text and detects format
+* Parses valid working hours
+* Displays breakdown + totals
 
 ### 2. Manual Input Mode
 
-* Input hours manually per payslip:
-
+* Input:
   * Ordinary
-  * Time and 1/2
-  * Double Time
-* Useful for unsupported or different payslip formats
+  * Overtime
+  * Leave
+  * Public Holiday
+Useful for unsupported formats
 
 ---
 
@@ -62,6 +62,7 @@ pdf-payslip-hours-extractor/
 │
 ├── app.py
 ├── requirements.txt
+├── README.md
 ├── .gitignore
 ```
 
@@ -117,27 +118,20 @@ http://localhost:8501
 
 ---
 
-## ⚠️ Notes
+## 🎯 Use Case
 
-The automated extraction currently supports:
+This tool was built to automate the process of calculating working hours from payslips, eliminating manual calculations and reducing errors.
 
-* Ordinary
-* Time and 1/2
-* Double Time
-
-Other values such as:
-
-* Shift allowances
-* Bonuses
-* Tax or salary components
-
-are intentionally ignored to ensure accurate working hour calculations.
+It is especially useful for:
+  * Casual workers
+  * Shift-based employees
+  * Workers with multiple pay formats
 
 ---
 
 ## 🔮 Future Improvements
 
-* Support for multiple payslip formats
+* Support for more payslip formats
 * Smart payslip structure detection
 * Data visualization dashboard
 
