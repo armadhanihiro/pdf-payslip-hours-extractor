@@ -12,15 +12,16 @@ A Streamlit web application that intelligently extracts and calculates working h
 
 ## 🚀 Features
 
-- 📄 Upload PDF payslips
-- 🔍 Automatic extraction of working hours:
-  - Chandler Agency
-  - TFI (Thomas Foods International)
-  - APG Workforce
-- ✍️ Manual input for flexible usage
-- ⏱️ Calculate total working hours
-- 📅 Estimate total working days
-- 📊 Handle multiple payslips
+- Upload PDF payslips
+- Automatic working-hours extraction from supported payslip formats
+- Manual input for unsupported formats
+- Automatic format detection with manual override
+- Calculates total working hours
+- Estimates working days using:
+  - 35+ hours
+  - minimum 5 working days for a full week
+- Exports overall results to Excel
+- Feedback link via GitHub Issues
 
 ---
 
@@ -70,10 +71,12 @@ pdf-payslip-hours-extractor/
 
 ## 🛠️ Tech Stack
 
-* Python
-* Streamlit
-* pdfplumber
-* Regular Expressions (Regex)
+- Python
+- Streamlit
+- pdfplumber
+- pandas
+- openpyxl
+- Regex (Regular Expression)
 
 ---
 
